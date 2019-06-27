@@ -19,7 +19,7 @@ const handleDown = (oldValue) => {
         <button onClick={ () => { handleDown(oldValue)} }>-</button>
         <span >{oldValue} {spanText}</span>
         <button onClick={ () => { handleUp(oldValue)} }>+</button>
-      </li>
+        </li>
     );
 };
 
