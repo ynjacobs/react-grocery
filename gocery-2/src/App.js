@@ -4,13 +4,7 @@ import Filters from './Filters';
 import List from './List';
 
 const App = () => {
-  const filters = [
-    { name: 'All', value: 'all', checked: true },
-    { name: 'Meat', value: 'meat', checked: false },
-    { name: 'Produce', value: 'prod', checked: false },
-    { name: 'Dairy', value: 'dairy', checked: false },
-    { name: 'Bakery', value: 'bakery', checked: false },
-  ];
+
 
   const initialItems = [
     { name: 'Steak', type: 'meat', quantity: 3 },
@@ -59,7 +53,8 @@ const App = () => {
         <h1>Grocery List</h1>
       </header>
       <Form onSubmit={addItem}/>
-      <Filters filters={filters}/>
+      {/* <Filters filters={filters}/> */}
+      <Filters/>
       <List
         items={items}
         incrementItem={incrementItemQuantity}

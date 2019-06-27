@@ -1,19 +1,22 @@
-import React from 'react';
+import React, {useState, useRef} from 'react';
 import FilterItem from './FilterItem';
+import ListItem from './ListItem';
 
-const Filters = ({ filters }) => {
+const Filters = () => {
+
+  const initialFilters = [
+    { name: 'All', value: 'all'},
+    { name: 'Meat', value: 'meat' },
+    { name: 'Produce', value: 'prod' },
+    { name: 'Dairy', value: 'dairy' },
+    { name: 'Bakery', value: 'bakery' },
+  ];
+
+  const [filters, setFilters] = useState(initialFilters);
 
 
-
-
-  // const selectFilter = (e) => {
-  //   e.preventDefault();
-
-  //   console.log("Selected:", e.target)
-  // }
-
-  const filterElements = filters.map((filter, i) => {
-    return <FilterItem key={i} index={i} filter={ filter }/>
+  const filterElements = filters.map((filter, index) => {
+    return <FilterItem filter={filter}/>
   })
 
 

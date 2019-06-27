@@ -1,22 +1,26 @@
-import React from 'react';
+import React, {useRef} from 'react';
 
 const FilterItem = ({ filter, index }) => {
   const { name, value, checked } = filter;
 
-  function handleClick(index) {
-    console.log("Target", index);
+  const catagoryRef = useRef()
+
+  const selectFilter = (index) => {
+    catagoryRef.current.checked = true
+    console.log("CatagoryRef:", catagoryRef.current)
   }
 
+
   return (
-    <li>
+    <li onClick={()=> selectFilter(index)}
+    >
       <input type="radio" 
               name="category" 
               value={ value } 
               id={ index } 
-              defaultChecked={checked}
+              ref={catagoryRef}
               />
       <label htmlFor="filter0"
-              onClick={()=> handleClick(index)}
               style={{userSelect: 'none'}}
       >{ name }</label>
     </li>
