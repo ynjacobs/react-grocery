@@ -54,7 +54,7 @@ const App = () => {
       </header>
       <Form onSubmit={addItem}/>
       {/* <Filters filters={filters}/> */}
-      <Filters/>
+      <Filters handleChange={setItems} />
       <List
         items={items}
         incrementItem={incrementItemQuantity}

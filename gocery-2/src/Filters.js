@@ -16,9 +16,8 @@ const Filters = () => {
 
 
   const filterElements = filters.map((filter, index) => {
-    return <FilterItem filter={filter}/>
+    return <FilterItem filter={filter} />
   })
-
 
 
   return (
