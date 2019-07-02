@@ -1,13 +1,15 @@
 import React, {useRef} from 'react';
 
-const FilterItem = ({ filter, index }) => {
+const FilterItem = ({ filter, index, handleFilter }) => {
   const { name, value, checked } = filter;
 
   const catagoryRef = useRef()
 
   const selectFilter = (index) => {
     catagoryRef.current.checked = true
-    console.log("CatagoryRef:", catagoryRef.current)
+    console.log("CatagoryRef:", catagoryRef.current,'----', index)
+    
+    handleFilter(index);
   }
 
 

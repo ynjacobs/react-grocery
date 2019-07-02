@@ -2,21 +2,13 @@ import React, {useState, useRef} from 'react';
 import FilterItem from './FilterItem';
 import ListItem from './ListItem';
 
-const Filters = () => {
+const Filters = ({filters, handleFilter}) => {
 
-  const initialFilters = [
-    { name: 'All', value: 'all'},
-    { name: 'Meat', value: 'meat' },
-    { name: 'Produce', value: 'prod' },
-    { name: 'Dairy', value: 'dairy' },
-    { name: 'Bakery', value: 'bakery' },
-  ];
-
-  const [filters, setFilters] = useState(initialFilters);
+ 
 
 
   const filterElements = filters.map((filter, index) => {
-    return <FilterItem filter={filter} />
+    return <FilterItem key={index} filter={filter} index={index} handleFilter={handleFilter}/>
   })
 
 
